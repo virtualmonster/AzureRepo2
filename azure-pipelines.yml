@@ -1,0 +1,25 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+#trigger:
+#- main
+
+#pool:
+#  vmImage: ubuntu-latest
+
+pool:
+  'LocalAgent'
+
+steps:
+- script: echo Adding tests to Azure Pipelines is easy!
+  displayName: 'Run an IBM Test'
+
+- task: IBMRationalAPITask@0
+  inputs:
+    productpath: 'C:\Program Files\IBM\RationalIntegrationTester'
+    projectdir: 'C:\Users\stuart.walker\OneDrive - HCL Technologies Ltd\Documents\GitHub\OneTest_VBooking_API\VBooking_API'
+    projectname: 'VBooking Sample'
+    environment: 'LOCAL'
+    tests: 'All Tests'
