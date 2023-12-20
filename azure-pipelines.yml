@@ -18,8 +18,14 @@ steps:
 
 - task: IBMRationalAPITask@0
   inputs:
-    productpath: 'C:\Program Files\IBM\RationalIntegrationTester'
+    productpath: 'C:\Program Files\HCL\DevOpsTestAPI'
     projectdir: 'C:\Users\stuart.walker\OneDrive - HCL Technologies Ltd\Documents\GitHub\OneTest_VBooking_API\VBooking_API'
     projectname: 'VBooking Sample'
     environment: 'LOCAL'
     tests: 'All Tests'
+
+- task: PublishTestResults@2
+  inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**/DesignExample*.xml'
+      searchFolder: 'c:\temp'
