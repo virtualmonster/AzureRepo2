@@ -10,7 +10,7 @@
 #  vmImage: ubuntu-latest
 
 pool:
-  'LocalAgent'
+  'default'
 
 steps:
 - script: echo Adding tests to Azure Pipelines is easy!
